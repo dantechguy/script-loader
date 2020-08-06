@@ -1,0 +1,36 @@
+{
+  "clonegithubrepos": 
+    [ 
+      {
+        "description": "remove demo directory",
+        "path": "./",
+        "mods": ["ignoreerror"],
+        "commands": [
+          "rmdir demo /s /q"
+        ]
+      },
+      {
+        "description": "make demo directory",
+        "path": "./",
+        "commands": [
+          "mkdir demo"
+        ]
+      },
+      {
+        "description": "clone demo github repo",
+        "path": "./demo",
+        "commands": [
+          "git clone https://github.com/shekhargulati/python-flask-docker-hello-world.git"
+        ]
+      }
+    ],
+  
+  "dockerfiles": 
+  [ 
+    {
+      "description": "setup docker files",
+      "path": "./demo",
+      "commands": ["docker run"]
+    }
+  ]
+}
