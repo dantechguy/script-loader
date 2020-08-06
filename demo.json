@@ -6,31 +6,27 @@
         "path": "./",
         "mods": ["ignoreerror"],
         "commands": [
-          "rmdir demo /s /q"
-        ]
-      },
-      {
-        "description": "make demo directory",
-        "path": "./",
-        "commands": [
-          "mkdir demo"
+          "rm -rf docker-demo"
         ]
       },
       {
         "description": "clone demo github repo",
-        "path": "./demo",
+        "path": "./",
         "commands": [
-          "git clone https://github.com/shekhargulati/python-flask-docker-hello-world.git"
+          "git clone https://github.com/shekhargulati/python-flask-docker-hello-world.git docker-demo"
         ]
-      }
+      },
     ],
   
   "dockerfiles": 
   [ 
     {
       "description": "setup docker files",
-      "path": "./demo",
-      "commands": ["docker run"]
+      "path": "./docker-demo",
+      "commands": [
+          "docker build -t simple-flask-app:latest .",
+          "docker un -d -p 5000:5000 simple-flask-app"
+      ]
     }
   ]
 }
