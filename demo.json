@@ -15,7 +15,7 @@
         "commands": [
           "git clone https://github.com/shekhargulati/python-flask-docker-hello-world.git docker-demo"
         ]
-      },
+      }
     ],
   
   "dockerfiles": 
